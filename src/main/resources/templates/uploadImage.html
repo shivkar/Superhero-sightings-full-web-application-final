@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+            nav .btn {
+                background-color: blue;
+                color: #fef9ff;
+                margin-right: 30px;
+                text-align: center;
+                width: 140px !important;
+            }
+            nav .btn:hover {
+                font-weight: bold;
+                color: #ffffff;
+            }
+            .container {
+                background-color: blanchedalmond;
+                color: black;
+                border-radius: 3px
+                    border: 2px solid blue;}
+
+            #map{
+                width: 100%;
+                height: 500px;
+                background-color: grey;
+
+                border-radius: 8px;
+            }
+
+            table, th, td {
+                border-collapse: collapse;
+                border: 1px solid ;
+            }
+
+        </style>
+
+    <br><br>
+    <title>Super Sightings!</title>
+</head>
+<body>
+
+    <!-- Main Body of Page -->
+
+    <div class="container">
+
+        <h1 style="font-size: 3.0em ;background-color:palevioletred;" class="text-center border border-solid">
+            Superhero Sightings</h1>
+        <br><br>
+        <nav class="text-center">
+            <a class="btn badge-pill " href="home.html">Home</a>
+            <a class="btn badge-pill" href="http://localhost:8080/sightings">Sightings</a>
+            <a class="btn badge-pill" href="http://localhost:8080/superheros">Superheros</a>
+            <a class="btn badge-pill" href="http://localhost:8080/powers">Powers</a>
+            <a class="btn badge-pill" href="http://localhost:8080/locations">Locations</a>
+            <a class="btn badge-pill" href="http://localhost:8080/organizations">Organizations</a>	
+        </nav>
+
+        <br><br>
+
+        <div class="row m-4 border border-dark">
+            <div class="col-3 text-center m-3 ">
+                <span class="h3">Upload Image:</span>
+            </div> <br>
+
+            <div class="col-7 text-center m-3">
+                <form action="uploadImage" method="POST"  enctype="multipart/form-data">
+                    <div class="form-group row">
+
+                        <label for="image" class="col-3 col-form-label" >
+                            Super's Image:</label>
+
+                        <div class="col-9">
+                            <input type="file" 
+                                   id= "image"
+                                   name="image" 
+                                   accept="image/*" 
+                                   class= "form-control-file" 
+                                   required />
+                        </div>
+
+                        <div class="row m-4">
+                            <div class="col text-center m-4">
+                                <input type="hidden" name="id" th:value="${superhero.id}"/>
+                                <button type="submit" class="btn btn-outline-primary ">
+                                    Upload </button>
+
+                                </form>
+                            </div>
+
+
+
+                            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+                            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+                            </body>
+                            </html>
